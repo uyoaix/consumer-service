@@ -35,9 +35,4 @@ public class NacosController {
         System.out.println("request url:" + url);
         return restTemplate.getForObject(url, String.class);
     }
-
-    @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
 }
