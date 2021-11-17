@@ -54,6 +54,8 @@ dependencies {
 
     //-----spring cloud alibaba
     compile("com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery")
+    compile("com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config")
+
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'

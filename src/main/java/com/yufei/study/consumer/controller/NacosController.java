@@ -22,6 +22,9 @@ public class NacosController {
 
     private final RestTemplate restTemplate;
 
+    @Value("${data.id}")
+    private String dataId;
+
     public NacosController(LoadBalancerClient loadBalancerClient,
                            RestTemplate restTemplate) {
         this.loadBalancerClient = loadBalancerClient;
@@ -34,5 +37,11 @@ public class NacosController {
         String url = String.format("http://%s:%s/echo/%s", serviceInstance.getHost(), serviceInstance.getPort(), appName);
         System.out.println("request url:" + url);
         return restTemplate.getForObject(url, String.class);
+    }
+
+    @GetMapping("/getNacosConfigVal")
+    public String getNacosConfigVal(){
+
+        return dataId;
     }
 }
